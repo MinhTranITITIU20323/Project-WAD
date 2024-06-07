@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
 package com.mycompany.wad.project;
-
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
@@ -11,8 +10,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
 
-@WebServlet("/login")
-public class LoginServlet extends HttpServlet {
+@WebServlet("/signup")
+public class SignupServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("username");
@@ -26,27 +25,28 @@ public class LoginServlet extends HttpServlet {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection conn = DriverManager.getConnection(dbURL, dbUser, dbPassword);
-            String sql = "SELECT * FROM users WHERE usersName = ? AND usersPassword = ?";
-            PreparedStatement statement = conn.prepareStatement(sql);
-            statement.setString(1, username);
-            statement.setString(2, password);
-            ResultSet resultSet = statement.executeQuery();
-
+            
+            String checkUserSql = "SELECT * FROM users WHERE usersName = ?";
+            PreparedStatement checkUserStatement = conn.prepareStatement(checkUserSql);
+            checkUserStatement.setString(1, username);
+            ResultSet resultSet = checkUserStatement.executeQuery();
+            
             if (resultSet.next()) {
-                boolean isAdmin = resultSet.getBoolean("is_admin");
-
-                HttpSession session = request.getSession();
-                session.setAttribute("username", username);
-                session.setAttribute("isAdmin", isAdmin);
-                Cookie loginCookie = new Cookie("username", username);
-                loginCookie.setMaxAge(30 * 60);
-                response.addCookie(loginCookie);
-                
-
-                response.sendRedirect("index.jsp");
-            } else {
                 PrintWriter out = response.getWriter();
-                out.println("Invalid username or password");
+                out.println("Username already exists. Please choose a different username.");
+            } else {
+                String sql = "INSERT INTO users (usersName, usersPassword) VALUES (?, ?)";
+                PreparedStatement statement = conn.prepareStatement(sql);
+                statement.setString(1, username);
+                statement.setString(2, password);
+                
+                int rowsInserted = statement.executeUpdate();
+                if (rowsInserted > 0) {
+                    response.sendRedirect("index.jsp");
+                } else {
+                    PrintWriter out = response.getWriter();
+                    out.println("An error occurred. Please try again.");
+                }
             }
 
             conn.close();

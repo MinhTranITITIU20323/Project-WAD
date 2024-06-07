@@ -17,9 +17,21 @@
         <h1>WELCOME TO STORE PAGE</h1>
         <%
             String username = (String) session.getAttribute("username");
+            Boolean isAdmin = (Boolean) session.getAttribute("isAdmin");
             if (username != null) {
         %>
         <h2>Welcome, <%= username %>!</h2>
+        <%
+            if (isAdmin != null && isAdmin) {
+        %>
+        <h3>You are logged in as an admin.</h3>
+        <%
+            } else {
+        %>
+        <h3>You are logged in as a regular user.</h3>
+        <%
+            }
+        %>
         <a href="logout">Logout</a>
         <%
             } else {
