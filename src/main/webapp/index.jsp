@@ -25,6 +25,7 @@
             if (isAdmin != null && isAdmin) {
         %>
         <h3>You are logged in as an admin.</h3>
+        <<a href="manageUsers.jsp">Manage Users</a>
         <%
             } else {
         %>
