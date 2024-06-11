@@ -21,5 +21,6 @@
         <input type="submit" value="Login">
     </form>
     <a href="signup.jsp">Go to Signup Page</a>
+    <a href="products">Go to product Page</a>
 </body>
 </html>
