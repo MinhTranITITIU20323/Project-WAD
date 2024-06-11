@@ -23,8 +23,6 @@ import java.util.List;
 
 @WebServlet("/cart")
 public class CartServlet extends HttpServlet {
-    private static final long serialVersionUID = 1L;
-
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         List<CartItem> cart = (List<CartItem>) session.getAttribute("cart");
@@ -34,7 +32,7 @@ public class CartServlet extends HttpServlet {
         request.setAttribute("cart", cart);
         request.getRequestDispatcher("cartPage.jsp").forward(request, response);
     }
-
+    //this function handles form actions made in cart and used as a switch
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
         if (action == null) {
@@ -55,14 +53,17 @@ public class CartServlet extends HttpServlet {
 
         response.sendRedirect("cart");
     }
-
+    
+    //function that adds selected item to cart by using a intiialized session element
     private void addToCart(HttpServletRequest request) {
+        //get selected product id
         int productId = Integer.parseInt(request.getParameter("productId"));
         Product product = getProductById(productId);
 
         if (product != null) {
             HttpSession session = request.getSession();
             List<CartItem> cart = (List<CartItem>) session.getAttribute("cart");
+            //Initialize a List of items for the cart
             if (cart == null) {
                 cart = new ArrayList<>();
             }
@@ -74,13 +75,14 @@ public class CartServlet extends HttpServlet {
                     break;
                 }
             }
+            //check if product is unique in cart, if yes, product is added to cart list
             if (!found) {
                 cart.add(new CartItem(product, 1));
             }
             session.setAttribute("cart", cart);
         }
     }
-
+    //this function update the item quantity
     private void updateCart(HttpServletRequest request) {
         int productId = Integer.parseInt(request.getParameter("productId"));
         int quantity = Integer.parseInt(request.getParameter("quantity"));
@@ -101,7 +103,7 @@ public class CartServlet extends HttpServlet {
             }
         }
     }
-
+    //this function delete items from cart
     private void deleteFromCart(HttpServletRequest request) {
         int productId = Integer.parseInt(request.getParameter("productId"));
 
@@ -112,7 +114,7 @@ public class CartServlet extends HttpServlet {
             cart.removeIf(item -> item.getProduct().getProductId() == productId);
         }
     }
-
+    //this function runs when accessing the cart page.
     private Product getProductById(int productId) {
         Product product = null;
         Connection connection = null;
@@ -120,6 +122,7 @@ public class CartServlet extends HttpServlet {
         ResultSet resultSet = null;
 
         try {
+            //database handler
             Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/project", "root", "password");
             statement = connection.prepareStatement("SELECT * FROM products WHERE product_id = ?");

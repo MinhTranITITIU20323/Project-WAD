@@ -21,7 +21,6 @@ import java.util.List;
 
 @WebServlet("/products")
 public class ProductsServlet extends HttpServlet {
-    private static final long serialVersionUID = 1L;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Product> products = new ArrayList<>();
@@ -34,7 +33,7 @@ public class ProductsServlet extends HttpServlet {
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/project", "root", "password");
             statement = connection.createStatement();
             resultSet = statement.executeQuery("SELECT * FROM products");
-
+            // Main generator for html of every products in productPage 
             while (resultSet.next()) {
                 Product product = new Product();
                 product.setProductId(resultSet.getInt("product_id"));
