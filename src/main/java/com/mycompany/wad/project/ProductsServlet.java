@@ -4,48 +4,56 @@
  */
 package com.mycompany.wad.project;
 
+import com.mycompany.wad.project.Product;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.*;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet("/Product")
+@WebServlet("/products")
 public class ProductsServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String dbURL = "jdbc:mysql://127.0.0.1:3306/project";
-        String dbUser = "root";
-        String dbPassword = "password";
-
         List<Product> products = new ArrayList<>();
+        Connection connection = null;
+        Statement statement = null;
+        ResultSet resultSet = null;
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn = DriverManager.getConnection(dbURL, dbUser, dbPassword);
-            String sql = "SELECT p.*, c.category_name FROM products p JOIN categories c ON p.category_id = c.category_id";
-            PreparedStatement statement = conn.prepareStatement(sql);
-            ResultSet resultSet = statement.executeQuery();
-
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/project", "root", "password");
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery("SELECT * FROM products");
+            // Main generator for html of every products in productPage 
             while (resultSet.next()) {
-                int id = resultSet.getInt("product_id");
-                String name = resultSet.getString("product_name");
-                double price = resultSet.getDouble("price");
-                String description = resultSet.getString("description");
-                String producer = resultSet.getString("producer");
-                String imageUrl = resultSet.getString("image_url");
-                String category = resultSet.getString("category_name");
-
-                products.add(new Product(id, name, price, description, producer, imageUrl, category));
+                Product product = new Product();
+                product.setProductId(resultSet.getInt("product_id"));
+                product.setProductName(resultSet.getString("product_name"));
+                product.setPrice(resultSet.getDouble("price"));
+                product.setProducer(resultSet.getString("producer"));
+                product.setDescription(resultSet.getString("description"));
+                product.setImageUrl(resultSet.getString("image_url"));
+                product.setCategoryId(resultSet.getInt("category_id"));
+                products.add(product);
             }
-            conn.close();
         } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            try { if (resultSet != null) resultSet.close(); } catch (Exception e) { e.printStackTrace(); }
+            try { if (statement != null) statement.close(); } catch (Exception e) { e.printStackTrace(); }
+            try { if (connection != null) connection.close(); } catch (Exception e) { e.printStackTrace(); }
         }
 
         request.setAttribute("products", products);
-        request.getRequestDispatcher("products.jsp").forward(request, response);
+        request.getRequestDispatcher("productPage.jsp").forward(request, response);
     }
 }

@@ -9,55 +9,22 @@ package com.mycompany.wad.project;
  * @author Tran Tran
  */
 
-
 public class CartItem {
-    private int id;
-    private String name;
-    private double price;
-    private String description;
-    private String producer;
-    private String imageUrl;
-    private String category;
+    private Product product;
     private int quantity;
 
-    public CartItem(int id, String name, double price, String description, String producer, String imageUrl, String category, int quantity) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-        this.description = description;
-        this.producer = producer;
-        this.imageUrl = imageUrl;
-        this.category = category;
+    public CartItem(Product product, int quantity) {
+        this.product = product;
         this.quantity = quantity;
     }
 
-    // Getters and setters for each field
-    public int getId() {
-        return id;
+    // Getters and setters
+    public Product getProduct() {
+        return product;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public String getProducer() {
-        return producer;
-    }
-
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public String getCategory() {
-        return category;
+    public void setProduct(Product product) {
+        this.product = product;
     }
 
     public int getQuantity() {
@@ -66,5 +33,14 @@ public class CartItem {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    // toString method
+    @Override
+    public String toString() {
+        return "CartItem{" +
+                "product=" + product +
+                ", quantity=" + quantity +
+                '}';
     }
 }

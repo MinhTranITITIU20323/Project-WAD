@@ -9,51 +9,71 @@ package com.mycompany.wad.project;
  * @author Tran Tran
  */
 
-
 public class Product {
-    private int id;
-    private String name;
+    private int productId;
+    private String productName;
     private double price;
-    private String description;
     private String producer;
+    private String description;
     private String imageUrl;
-    private String category;
+    private int categoryId;
 
-    public Product(int id, String name, double price, String description, String producer, String imageUrl, String category) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-        this.description = description;
-        this.producer = producer;
-        this.imageUrl = imageUrl;
-        this.category = category;
+    public Product() {
     }
 
-    public int getId() {
-        return id;
+    public int getProductId() {
+        return productId;
     }
 
-    public String getName() {
-        return name;
+    public void setProductId(int productId) {
+        this.productId = productId;
+    }
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 
     public double getPrice() {
         return price;
     }
 
-    public String getDescription() {
-        return description;
+    public void setPrice(double price) {
+        this.price = price;
     }
 
     public String getProducer() {
         return producer;
     }
 
+    public void setProducer(String producer) {
+        this.producer = producer;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public String getImageUrl() {
         return imageUrl;
     }
 
-    public String getCategory() {
-        return category;
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public int getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(int categoryId) {
+        this.categoryId = categoryId;
     }
 }
