@@ -24,7 +24,7 @@ public class CartServlet extends HttpServlet {
 
         String productId = request.getParameter("productId");
 
-        String dbURL = "jdbc:mysql://localhost:3306/project";
+        String dbURL = "jdbc:mysql://127.0.0.1:3306/project";
         String dbUser = "root";
         String dbPassword = "password";
 

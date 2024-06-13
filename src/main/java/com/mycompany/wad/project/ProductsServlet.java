@@ -16,7 +16,7 @@ import java.util.List;
 public class ProductsServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String dbURL = "jdbc:mysql://localhost:3306/project";
+        String dbURL = "jdbc:mysql://127.0.0.1:3306/project";
         String dbUser = "root";
         String dbPassword = "password";
 

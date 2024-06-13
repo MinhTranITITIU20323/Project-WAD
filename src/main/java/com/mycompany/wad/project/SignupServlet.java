@@ -18,7 +18,7 @@ public class SignupServlet extends HttpServlet {
         String password = request.getParameter("password");
 
         // Database connection setup
-        String dbURL = "jdbc:mysql://localhost:3306/project";
+        String dbURL = "jdbc:mysql://127.0.0.1:3306/project";
         String dbUser = "root";
         String dbPassword = "password";
 

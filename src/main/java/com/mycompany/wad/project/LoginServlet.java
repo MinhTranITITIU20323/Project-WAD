@@ -19,7 +19,7 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("password");
 
         // Database connection setup
-        String dbURL = "jdbc:mysql://localhost:3306/project";
+        String dbURL = "jdbc:mysql://127.0.0.1:3306/project";
         String dbUser = "root";
         String dbPassword = "password";
 
@@ -33,7 +33,7 @@ public class LoginServlet extends HttpServlet {
             ResultSet resultSet = statement.executeQuery();
 
             if (resultSet.next()) {
-                boolean isAdmin = resultSet.getBoolean("is_admin");
+                boolean isAdmin = resultSet.getBoolean( "is_admin");
 
                 HttpSession session = request.getSession();
                 session.setAttribute("username", username);
