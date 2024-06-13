@@ -15,10 +15,12 @@
 <body>
     <h1>Products</h1>
     <ul>
+        <%--get the data sent from request.getRequestDispatcher("productPage.jsp").forward(request, response) into a list.  --%>
+        <%-- and then prints products out in a loop--%>
         <%
-            //get the data sent from request.getRequestDispatcher("productPage.jsp").forward(request, response) into a list 
+            
             List<Product> products = (List<Product>) request.getAttribute("products");
-            //Loop that retrieve products to 
+            
             if (products != null) {
                 for (Product product : products) {
         %>
@@ -27,7 +29,7 @@
                 <h2><%= product.getProductName() %></h2>
                 <p><%= product.getDescription() %></p>
                 <p>Price: $<%= product.getPrice() %></p>
-                <% This form adds items to cart, sends the productId of the chosen product using a post method %>
+                <%-- This form adds items to cart, sends the productId of the chosen product using a post method --%>
                 <form action="cart" method="post">
                     <input type="hidden" name="productId" value="<%= product.getProductId() %>" />
                     <input type="submit" value="Add to Cart" />

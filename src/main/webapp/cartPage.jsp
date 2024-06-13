@@ -27,14 +27,14 @@
                 <p><%= item.getProduct().getDescription() %></p>
                 <p>Price: $<%= item.getProduct().getPrice() %></p>
                 <p>Quantity: <%= item.getQuantity() %></p>
-                <%//form that update the quantity of a unique item currently in cart %>
+                <%--form that update the quantity of a unique item currently in cart --%>
                 <form action="cart" method="post">
                     <input type="hidden" name="action" value="update"/>
                     <input type="hidden" name="productId" value="<%= item.getProduct().getProductId() %>"/>
                     <input type="number" name="quantity" value="<%= item.getQuantity() %>"/>
                     <input type="submit" value="Update Quantity"/>
                 </form>
-                    <%//form that delete the item currently in cart %>
+                    <%--form that delete the item currently in cart --%>
                 <form action="cart" method="post">
                     <input type="hidden" name="action" value="delete"/>
                     <input type="hidden" name="productId" value="<%= item.getProduct().getProductId() %>"/>
