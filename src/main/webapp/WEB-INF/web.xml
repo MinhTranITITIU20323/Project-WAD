@@ -24,6 +24,14 @@
         <servlet-name>CartServlet</servlet-name>
         <servlet-class>com.mycompany.wad.project.CartServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CheckoutServlet</servlet-name>
+        <servlet-class>com.mycompany.wad.project.CheckoutServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PrintSession</servlet-name>
+        <servlet-class>com.mycompany.wad.project.PrintSession</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
@@ -48,6 +56,14 @@
         <servlet-name>CartServlet</servlet-name>
         <url-pattern>/CartServlet</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CheckoutServlet</servlet-name>
+        <url-pattern>/CheckoutServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PrintSession</servlet-name>
+        <url-pattern>/PrintSession</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
@@ -56,4 +72,5 @@
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
+    <Servlet/>
 </web-app>

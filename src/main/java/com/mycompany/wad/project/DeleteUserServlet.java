@@ -33,7 +33,7 @@ public class DeleteUserServlet extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
+ 
         response.sendRedirect("UsersServlet");
     }
 }

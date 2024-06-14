@@ -20,6 +20,7 @@ public class SignupServlet extends HttpServlet {
         String dob = request.getParameter("DOB");
         String address = request.getParameter("address");
         String email = request.getParameter("email");
+        String phone = request.getParameter("phone");
         // Database connection setup
         String dbURL = "jdbc:mysql://localhost:3306/project";
         String dbUser = "root";
@@ -38,7 +39,7 @@ public class SignupServlet extends HttpServlet {
                 PrintWriter out = response.getWriter();
                 out.println("Username already exists. Please choose a different username.");
             } else {
-                String sql = "INSERT INTO users (usersName, usersPassword, usersFname, usersDOB, usersAddress, usersEmail) VALUES (?, ?, ?, ?, ?, ?)";
+                String sql = "INSERT INTO users (usersName, usersPassword, usersFname, usersDOB, usersAddress, usersEmail, usersPhone) VALUES (?, ?, ?, ?, ?, ?, ?)";
                 PreparedStatement statement = conn.prepareStatement(sql);
                 statement.setString(1, username);
                 statement.setString(2, password);
@@ -46,7 +47,7 @@ public class SignupServlet extends HttpServlet {
                 statement.setString(4, dob);
                 statement.setString(5, address);
                 statement.setString(6, email);
-                
+                statement.setString(7, phone);
                 int rowsInserted = statement.executeUpdate();
                 if (rowsInserted > 0) {
                     response.sendRedirect("index.jsp");
@@ -55,7 +56,6 @@ public class SignupServlet extends HttpServlet {
                     out.println("An error occurred. Please try again.");
                 }
             }
-
             conn.close();
         } catch (Exception e) {
             e.printStackTrace();

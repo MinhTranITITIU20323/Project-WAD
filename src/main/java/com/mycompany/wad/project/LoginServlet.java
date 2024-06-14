@@ -10,7 +10,7 @@ import jakarta.servlet.http.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
-
+//Login servlet that handles login. 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 
@@ -24,6 +24,7 @@ public class LoginServlet extends HttpServlet {
         String dbPassword = "password";
 
         try {
+            //code that checks the database for the username and password by searching the user database
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection conn = DriverManager.getConnection(dbURL, dbUser, dbPassword);
             String sql = "SELECT * FROM users WHERE usersName = ? AND usersPassword = ?";
@@ -33,20 +34,22 @@ public class LoginServlet extends HttpServlet {
             ResultSet resultSet = statement.executeQuery();
 
             if (resultSet.next()) {
+                //check if the user is admin or not
                 boolean isAdmin = resultSet.getBoolean("is_admin");
-
+                //set session attributes and login cookie
                 HttpSession session = request.getSession();
                 session.setAttribute("username", username);
                 session.setAttribute("isAdmin", isAdmin);
                 Cookie loginCookie = new Cookie("username", username);
                 loginCookie.setMaxAge(30 * 60);
                 response.addCookie(loginCookie);
-                
-
                 response.sendRedirect("index.jsp");
+             
             } else {
+                //Failstate for not correct info
                 PrintWriter out = response.getWriter();
                 out.println("Invalid username or password");
+                
             }
 
             conn.close();

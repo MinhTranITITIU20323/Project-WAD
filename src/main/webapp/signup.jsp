@@ -18,7 +18,7 @@
             DOB: <input type="date" name ="DOB" required><br>
             Address: <input type="text" name="address" required><br>
             Email: <input type="email" name="email" required><br>
-            
+            Phone: <input type="text" name="phone"required><br>
             <input type="submit" value="Sign Up">
         </form>
         <a href="index.jsp">Already have an account? Login here!</a>

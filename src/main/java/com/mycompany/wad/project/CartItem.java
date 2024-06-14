@@ -18,7 +18,7 @@ public class CartItem {
         this.quantity = quantity;
     }
 
-    // Getters and setters
+    //getters and setters
     public Product getProduct() {
         return product;
     }
@@ -35,7 +35,7 @@ public class CartItem {
         this.quantity = quantity;
     }
 
-    // toString method
+    //toString method
     @Override
     public String toString() {
         return "CartItem{" +

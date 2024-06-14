@@ -18,7 +18,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-
+//page to display product
 @WebServlet("/products")
 public class ProductsServlet extends HttpServlet {
 
@@ -33,7 +33,7 @@ public class ProductsServlet extends HttpServlet {
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/project", "root", "password");
             statement = connection.createStatement();
             resultSet = statement.executeQuery("SELECT * FROM products");
-            // Main generator for html of every products in productPage 
+            //Runs a loop for resultSet SQL query tp return all products in table
             while (resultSet.next()) {
                 Product product = new Product();
                 product.setProductId(resultSet.getInt("product_id"));
