@@ -16,7 +16,10 @@ public class SignupServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-
+        String Fname = request.getParameter("name");
+        String dob = request.getParameter("DOB");
+        String address = request.getParameter("address");
+        String email = request.getParameter("email");
         // Database connection setup
         String dbURL = "jdbc:mysql://localhost:3306/project";
         String dbUser = "root";
@@ -35,10 +38,14 @@ public class SignupServlet extends HttpServlet {
                 PrintWriter out = response.getWriter();
                 out.println("Username already exists. Please choose a different username.");
             } else {
-                String sql = "INSERT INTO users (usersName, usersPassword) VALUES (?, ?)";
+                String sql = "INSERT INTO users (usersName, usersPassword, usersFname, usersDOB, usersAddress, usersEmail) VALUES (?, ?, ?, ?, ?, ?)";
                 PreparedStatement statement = conn.prepareStatement(sql);
                 statement.setString(1, username);
                 statement.setString(2, password);
+                statement.setString(3, Fname);
+                statement.setString(4, dob);
+                statement.setString(5, address);
+                statement.setString(6, email);
                 
                 int rowsInserted = statement.executeUpdate();
                 if (rowsInserted > 0) {
