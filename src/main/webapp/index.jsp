@@ -24,7 +24,7 @@
 <body>
 <%--<h1>Welcome to Emerce</h1>     Dont need--%>
 
-<nav class="navbar navbar-expand-lg">
+<nav class="navbar navbar-expand-lg transparent">
     <div class="container">
         <a class="navbar-brand" href="#">Emerce</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

@@ -56,7 +56,7 @@
         </div>
     </div>
     <div class="form-outer">
-        <form action="#">
+        <form action="signup" method="post">
             <div class="page slide-page">
                 <div class="title">
                     Basic Info:
@@ -65,13 +65,13 @@
                     <div class="label">
                         First Name
                     </div>
-                    <input type="text">
+                    <input type="text" name="name" required><br>
                 </div>
                 <div class="field">
                     <div class="label">
                         Last Name
                     </div>
-                    <input type="text">
+                    <input type="text" name="name" required><br>
                 </div>
                 <div class="field">
                     <button class="firstNext next">Next</button>
@@ -85,13 +85,13 @@
                     <div class="label">
                         Address
                     </div>
-                    <input type="text">
+                    <input type="text" name="address" required><br>
                 </div>
                 <div class="field">
                     <div class="label">
                         Phone Number
                     </div>
-                    <input type="Number">
+                    <input type="text" name="phone" required><br>
                 </div>
                 <div class="field btns">
                     <button class="prev-1 prev">Previous</button>
@@ -106,17 +106,13 @@
                     <div class="label">
                         Date
                     </div>
-                    <input type="text">
+                    <input type="date" name="DOB" required><br>
                 </div>
                 <div class="field">
                     <div class="label">
-                        Gender
+                        Email
                     </div>
-                    <select>
-                        <option>Male</option>
-                        <option>Female</option>
-                        <option>Other</option>
-                    </select>
+                    <input type="email" name="email" required><br>
                 </div>
                 <div class="field btns">
                     <button class="prev-2 prev">Previous</button>
@@ -131,21 +127,22 @@
                     <div class="label">
                         Username
                     </div>
-                    <input type="text">
+                    <input type="text" name="username" required>
                 </div>
                 <div class="field">
                     <div class="label">
                         Password
                     </div>
-                    <input type="password">
+                    <input type="password" name="password" required>
                 </div>
                 <div class="field btns">
                     <button class="prev-3 prev">Previous</button>
-                    <button class="submit">Submit</button>
+                    <button class="submit" value="Sign Up">Submit</button>
                 </div>
             </div>
         </form>
     </div>
+    <a href="mainLogin.jsp">Login here!</a>
 </div>
 <script src="JS/signup.js"></script>
 

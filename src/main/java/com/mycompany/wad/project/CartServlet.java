@@ -20,10 +20,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-
+//I Rewrote this cart 2 times already. There won't be a 3rd one.
 @WebServlet("/cart")
 public class CartServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        //Get Session, if there's no session for cart, generate it
         HttpSession session = request.getSession();
         List<CartItem> cart = (List<CartItem>) session.getAttribute("cart");
         if (cart == null) {
@@ -53,7 +54,7 @@ public class CartServlet extends HttpServlet {
 
         response.sendRedirect("cart");
     }
-    
+
     //function that adds selected item to cart by using a intiialized session element
     private void addToCart(HttpServletRequest request) {
         //get selected product id
@@ -84,12 +85,13 @@ public class CartServlet extends HttpServlet {
     }
     //this function update the item quantity
     private void updateCart(HttpServletRequest request) {
+        //Get ID from cartPage.jsp when user clicks on quantity update button
         int productId = Integer.parseInt(request.getParameter("productId"));
         int quantity = Integer.parseInt(request.getParameter("quantity"));
-
+        //Session call for cart
         HttpSession session = request.getSession();
         List<CartItem> cart = (List<CartItem>) session.getAttribute("cart");
-
+        //Loop that handles the update. Check if number is valid or not.
         if (cart != null) {
             for (CartItem item : cart) {
                 if (item.getProduct().getProductId() == productId) {
@@ -124,7 +126,7 @@ public class CartServlet extends HttpServlet {
         try {
             //database handler
             Class.forName("com.mysql.cj.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/project", "root", "password");
+            connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/project", "root", "password");
             statement = connection.prepareStatement("SELECT * FROM products WHERE product_id = ?");
             statement.setInt(1, productId);
             resultSet = statement.executeQuery();
