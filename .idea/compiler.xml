@@ -9,5 +9,8 @@
         <module name="WAD-project" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="WAD-project" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>

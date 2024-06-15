@@ -1,0 +1,229 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*.top-right-corner {*/
+/*    position: absolute;*/
+/*    top: 10px;*/
+/*    right: 10px;*/
+/*    background-color: #f1f1f1;*/
+/*    padding: 10px;*/
+/*    border: 1px solid #ddd;*/
+/*    border-radius: 5px;*/
+/*}*/
+
+.navbar-brand{
+    font-size: 2rem;
+    color: black;
+    font-family: "Lobster", sans-serif;
+}
+.navbar-brand:hover{
+    color: black;
+}
+
+.nav-link{
+    margin-right: 10px;
+    margin-left: 10px;
+    color: black;
+    font-family: "Rubik", sans-serif;
+    text-transform: uppercase;
+}
+.nav-link:hover{
+    color: black;
+}
+
+/*.nav-login-section {*/
+/*    font-size: 2rem;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    align-items: flex-end;*/
+/*    margin-left: auto;*/
+/*}*/
+
+.login-status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+}
+
+.welcome-message,
+.admin-message,
+.user-message,
+.not-logged-in {
+    font-family: "Rubik", sans-serif;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.not-logged-in {
+    font-family: "Rubik", sans-serif;
+    font-weight: bold;
+}
+
+.search{
+    height: 40px;
+    width: 80%;
+    border-radius:  60px;
+    outline: none;
+    margin-right: -35px;
+    font-family: "Rubik", sans-serif;
+    border: 2px solid rgb(248,26,92);
+}
+
+.btn0{
+    height: 40px;
+    width: 40%;
+    outline: none;
+    border: none;
+    background: rgb(248,26,92);
+    color: white;
+    border-radius: 60px;
+    font-weight: 700;
+}
+
+.main{
+    background: url("https://cdn.prod.website-files.com/6009ec8cda7f305645c9d91b/60107f25c4e460d97bb8aec2_6002086f72b727312201e451_ecommerce-website-design-examples.jpeg");
+    background-size: cover;
+    height: 100vh;
+    background-position: 50%;
+    width: 100%;
+}
+
+.main h1{
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+.btn1{
+    height: 45px;
+    width: 35%;
+    border: none;
+    outline: none;
+    background-color: rgb(248,26,92);
+    color: white;
+    font-weight: 700;
+    border-radius: 60px;
+}
+
+.cart-items {
+    background: url("https://cdn.prod.website-files.com/6009ec8cda7f305645c9d91b/60107f25c4e460d97bb8aec2_6002086f72b727312201e451_ecommerce-website-design-examples.jpeg");
+    background-size: cover;
+    height: 100vh;
+    background-position: 50%;
+    width: 100%;
+}
+
+.card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 0.9rem;
+}
+
+.d-flex.justify-content-between.align-items-center {
+    margin-top: 1rem;
+}
+
+
+.d-flex.button-group {
+    display: flex;
+    align-items: center;
+}
+
+.d-flex.button-group form {
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+
+.d-flex.button-group .btn {
+    margin-right: 0;
+}
+
+
+.continue-shopping-btn {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+.continue-shopping-btn .btn {
+    background-color: #007bff;
+    /*border-color: #007bff;*/
+    color: #fff;
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s, border-color 0.3s;
+    border: none;
+    outline: none;
+    background-color: rgb(248,26,92);
+    font-weight: 700;
+    border-radius: 60px;
+}
+
+.continue-shopping-btn .btn:hover {
+    background-color: #0056b3;
+    border-color: #004d99;
+}
+
+/* Quantity selector */
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-controls .quantity-input {
+    width: 50px;
+    text-align: center;
+    margin: 0 5px;
+}
+
+.quantity-controls .quantity-btn {
+    background-color: #f2f2f2;
+    border: none;
+    color: #333;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.quantity-controls .quantity-btn:hover {
+    background-color: #e6e6e6;
+}

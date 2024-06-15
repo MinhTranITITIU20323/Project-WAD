@@ -33,16 +33,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav m-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">Home</a>
+                    <a class="nav-link active" href="index.jsp">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <a href="products" class="nav-link">Products</a>
                 </li>
+<%--                <li class="nav-item">--%>
+<%--                    <a class="nav-link dropdown-toggle" href="#">Link</a>--%>
+<%--                </li>--%>
                 <li class="nav-item">
-                    <a class="nav-link dropdown-toggle" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <a class="nav-link" href="cartPage.jsp">View Cart</a>
                 </li>
             </ul>
             <form class="d-flex">
