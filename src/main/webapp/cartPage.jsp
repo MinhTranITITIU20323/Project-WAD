@@ -169,7 +169,7 @@
                             <input type="hidden" name="action" value="delete"/>
                             <input type="hidden" name="productId" value="<%= item.getProduct().getProductId() %>"/>
                             <button type="submit" class="btn btn-sm btn-danger">Remove</button>
-<%--
+                        </form>
                     </div>
                 </div>
             </div>
