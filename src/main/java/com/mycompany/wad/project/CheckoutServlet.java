@@ -10,7 +10,6 @@ package com.mycompany.wad.project;
  */
 
 
-import com.mycompany.wad.project.CartItem;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;

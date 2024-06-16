@@ -1,0 +1,186 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Commented out code for top-right-corner */
+/*
+.top-right-corner {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #f1f1f1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+*/
+
+/* Set the background color of the navigation bar */
+.navbar {
+    background-color: white;
+}
+
+/* Set the background color of the navigation bar to be transparent */
+.navbar.transparent {
+    background-color: transparent;
+}
+
+.navbar-brand {
+    font-size: 2rem;
+    color: black;
+    font-family: "Lobster", sans-serif;
+}
+
+.navbar-brand:hover {
+    color: black;
+}
+
+.nav-link {
+    margin-right: 10px;
+    margin-left: 10px;
+    color: black;
+    font-family: "Rubik", sans-serif;
+    text-transform: uppercase;
+}
+
+.nav-link:hover {
+    color: black;
+}
+
+/* Commented out code for nav-login-section */
+/*
+.nav-login-section {
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-left: auto;
+}
+*/
+
+.login-status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+}
+
+.welcome-message,
+.admin-message,
+.user-message,
+.not-logged-in {
+    font-family: "Rubik", sans-serif;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.not-logged-in {
+    font-family: "Rubik", sans-serif;
+    font-weight: bold;
+}
+
+.search {
+    height: 40px;
+    width: 80%;
+    border-radius: 60px;
+    outline: none;
+    margin-right: -35px;
+    font-family: "Rubik", sans-serif;
+    border: 2px solid rgb(248, 26, 92);
+}
+
+.btn0 {
+    height: 40px;
+    width: 40%;
+    outline: none;
+    border: none;
+    background: rgb(248, 26, 92);
+    color: white;
+    border-radius: 60px;
+    font-weight: 700;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 20px;
+}
+
+.col-1g-7{
+    background: url("https://cdn.prod.website-files.com/6009ec8cda7f305645c9d91b/60107f25c4e460d97bb8aec2_6002086f72b727312201e451_ecommerce-website-design-examples.jpeg") no-repeat center center fixed;
+
+}
+.main {
+
+    height: 100vh;
+    width: 100%;
+}
+.main h1 {
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+.btn1 {
+    height: 45px;
+    width: 35%;
+    border: none;
+    outline: none;
+    background-color: rgb(248, 26, 92);
+    color: white;
+    font-weight: 700;
+    border-radius: 60px;
+}
+
+/* orderStyles.css */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+}
+
+.order-container {
+    max-width: 800px;
+    margin: auto;
+}
+
+.login-prompt, .orders-list, .order-box {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.order-box {
+    margin-bottom: 20px;
+}
+
+.login-link {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.login-link:hover {
+    background-color: #0056b3;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+}

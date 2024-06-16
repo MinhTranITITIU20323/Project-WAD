@@ -3,12 +3,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
 package com.mycompany.wad.project;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.*;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 @WebServlet("/signup")
 public class SignupServlet extends HttpServlet {
@@ -29,12 +36,12 @@ public class SignupServlet extends HttpServlet {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection conn = DriverManager.getConnection(dbURL, dbUser, dbPassword);
-
+            
             String checkUserSql = "SELECT * FROM users WHERE usersName = ?";
             PreparedStatement checkUserStatement = conn.prepareStatement(checkUserSql);
             checkUserStatement.setString(1, username);
             ResultSet resultSet = checkUserStatement.executeQuery();
-
+            
             if (resultSet.next()) {
                 PrintWriter out = response.getWriter();
                 out.println("Username already exists. Please choose a different username.");

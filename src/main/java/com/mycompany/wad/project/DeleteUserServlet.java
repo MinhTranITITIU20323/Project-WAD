@@ -6,9 +6,14 @@ package com.mycompany.wad.project;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.*;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
 import java.io.IOException;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 
 @WebServlet("/deleteUser")
 public class DeleteUserServlet extends HttpServlet {
@@ -33,7 +38,7 @@ public class DeleteUserServlet extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
+ 
         response.sendRedirect("UsersServlet");
     }
 }

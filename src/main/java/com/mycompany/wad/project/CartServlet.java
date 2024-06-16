@@ -4,15 +4,13 @@
  */
 package com.mycompany.wad.project;
 
-import com.mycompany.wad.project.CartItem;
-import com.mycompany.wad.project.Product;
-
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -54,7 +52,7 @@ public class CartServlet extends HttpServlet {
 
         response.sendRedirect("cart");
     }
-
+    
     //function that adds selected item to cart by using a intiialized session element
     private void addToCart(HttpServletRequest request) {
         //get selected product id
@@ -88,7 +86,7 @@ public class CartServlet extends HttpServlet {
         //Get ID from cartPage.jsp when user clicks on quantity update button
         int productId = Integer.parseInt(request.getParameter("productId"));
         int quantity = Integer.parseInt(request.getParameter("quantity"));
-        //Session call for cart
+        //Session call for cart 
         HttpSession session = request.getSession();
         List<CartItem> cart = (List<CartItem>) session.getAttribute("cart");
         //Loop that handles the update. Check if number is valid or not.

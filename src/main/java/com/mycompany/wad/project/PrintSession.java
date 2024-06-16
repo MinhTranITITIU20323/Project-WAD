@@ -15,7 +15,6 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Enumeration;
-
 //Debugger for printing out data in a session.
 //point any form action to this servlet when neccessary
 @WebServlet("/PrintSess")

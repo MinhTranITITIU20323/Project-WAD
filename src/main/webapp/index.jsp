@@ -76,8 +76,7 @@
        <div class="container">
          <div class="row">
               <div class="col-1g-7">
-                <h1>CATEGORY</h1>
-                  <button class="btn1">Browse All</button>
+                <h1>Welcome to our page</h1>
              </div>
          </div>
      </div>

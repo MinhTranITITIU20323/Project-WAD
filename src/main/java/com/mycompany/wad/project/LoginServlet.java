@@ -7,10 +7,14 @@ package com.mycompany.wad.project;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
+
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.*;
-//Login servlet that handles login.
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+//Login servlet that handles login. 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 
@@ -44,12 +48,12 @@ public class LoginServlet extends HttpServlet {
                 loginCookie.setMaxAge(30 * 60);
                 response.addCookie(loginCookie);
                 response.sendRedirect("index.jsp");
-
+             
             } else {
                 //Failstate for not correct info
                 PrintWriter out = response.getWriter();
                 out.println("Invalid username or password");
-
+                
             }
 
             conn.close();
