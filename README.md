@@ -11,7 +11,7 @@
 [Report](https://drive.google.com/file/d/1ZKrGcRH6ShuqDN-GmRLpSamMx4Pl72HF/view?usp=sharing)
 
 This project runs on Maven, Netbeans/IntelliJ.  
-To run it, download included files install Maven, Netbeans/IntelliJ, clean & build.    
+To run it, download included files install Maven, Netbeans/IntelliJ, MySQL clean & build.    
 
 T.HUY is the main branch for this project, with master being the back-end pure code branch.
 A lot of code commit doesn't show up because we had issues with building the front-end of the site and merging branches.
