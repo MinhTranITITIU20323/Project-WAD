@@ -91,9 +91,9 @@
                 <li class="nav-item">
                     <a href="products" class="nav-link">Products</a>
                 </li>
-                <%--                <li class="nav-item">--%>
-                <%--                    <a class="nav-link dropdown-toggle" href="#">Link</a>--%>
-                <%--                </li>--%>
+                                <li class="nav-item">
+                                    <a class="nav-link dropdown-toggle" href="orderInfo">Orders</a>
+                                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="cartPage.jsp">View Cart</a>
                 </li>
