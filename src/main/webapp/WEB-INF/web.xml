@@ -32,6 +32,10 @@
         <servlet-name>PrintSession</servlet-name>
         <servlet-class>com.mycompany.wad.project.PrintSession</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>OrderInfoServlet</servlet-name>
+        <servlet-class>com.mycompany.wad.project.OrderInfoServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
@@ -63,6 +67,10 @@
     <servlet-mapping>
         <servlet-name>PrintSession</servlet-name>
         <url-pattern>/PrintSession</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>OrderInfoServlet</servlet-name>
+        <url-pattern>/OrderInfoServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
