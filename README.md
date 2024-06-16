@@ -1,10 +1,12 @@
-# Unnamed Group 1:
+# Unnamed Group 1: E-commerce site
+## Contribution table
 | People | ID | Job | Contribution(100%)
 | ------ | ------ | ------ | ------ |
 | Tran Nguyen Minh Tran | ITITIU20323 |Back-end|33
 | Do Hoang Truong Huy | ITITIU20211 |Front-end|33
 | Nguyen Hoang Duc | ITITIU |Database, Back-end|33
 
+### Report and Presentation link
 [Presentation Slide](https://www.canva.com/design/DAGINE2eHVw/Xpr_fM1JXyxia_sAi3qksA/edit)  
 [Report](https://drive.google.com/file/d/1ZKrGcRH6ShuqDN-GmRLpSamMx4Pl72HF/view?usp=sharing)
 
