@@ -4,7 +4,7 @@
 | ------ | ------ | ------ | ------ |
 | Tran Nguyen Minh Tran | ITITIU20323 |Back-end|33
 | Do Hoang Truong Huy | ITITIU20211 |Front-end|33
-| Nguyen Hoang Duc | ITITIU |Database, Back-end|33
+| Nguyen Hoang Duc | ITITIU20190 |Database, Back-end|33
 
 ### Report and Presentation link
 [Presentation Slide](https://www.canva.com/design/DAGINE2eHVw/Xpr_fM1JXyxia_sAi3qksA/edit)  
