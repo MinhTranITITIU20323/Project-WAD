@@ -28,9 +28,10 @@ public class AdminOrderInfo extends HttpServlet {
         List<Order> orders = new ArrayList<>();
         List<OrderItem> orderItems = new ArrayList<>();
 
-        String dbURL = "jdbc:mysql://localhost:3306/project";
+        String dbURL = "jdbc:mysql://127.0.0.1:3306/project";
         String dbUser = "root";
         String dbPassword = "password";
+
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
