@@ -8,7 +8,7 @@
 
 ### Report and Presentation link
 [Presentation Slide](https://www.canva.com/design/DAGINE2eHVw/Xpr_fM1JXyxia_sAi3qksA/edit)  
-[Report](https://drive.google.com/file/d/1ZKrGcRH6ShuqDN-GmRLpSamMx4Pl72HF/view?usp=sharing)
+[Report](https://drive.google.com/file/d/1FGFTBdQWG7bLs8pfnu5nCjGIaU3g3PlT/view?usp=sharing)
 
 This project runs on Maven, Netbeans/IntelliJ.  
 To run it, download included files install Maven, Netbeans/IntelliJ, MySQL clean & build.    
