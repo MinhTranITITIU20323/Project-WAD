@@ -57,6 +57,7 @@
                 <% if (isAdmin != null && isAdmin) { %>
                 <h8 class="admin-message">You are logged in as an admin.</h8>
                 <a href="manageUsers.jsp">Manage Users</a>
+                <a href="adminOrder">See all orders</a>
                 <% } else { %>
                 <h8 class="user-message">You are logged in as a regular user.</h8>
                 <% } %>
